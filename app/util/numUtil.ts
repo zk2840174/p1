@@ -1,5 +1,5 @@
 
-export function getNumber( str: string| null | string[] | number | undefined , defaultNum: number ): number {
+export function getNumber( str: string | null | string[] | number | undefined , defaultNum: number ): number {
 
     if(!str){
         return defaultNum;
