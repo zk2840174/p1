@@ -1,6 +1,9 @@
 
-export function getNumber( str: string| string[] | number | undefined , defaultNum: number ): number {
+export function getNumber( str: string| null | string[] | number | undefined , defaultNum: number ): number {
 
+    if(!str){
+        return defaultNum;
+    }
 
     const parseNum = Number(extractString(str));
     const safeNum = isNaN(parseNum) ? defaultNum : parseNum ;
