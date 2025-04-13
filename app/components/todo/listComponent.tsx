@@ -14,7 +14,7 @@ function ListComponent() {
     const page = getNumber(searchParams.get('page'),1)
     const size = getNumber(searchParams.get('size'), 10)
 
-    const  {data, isFetching, error} = useQuery({
+    const  {data, isFetching, error, } = useQuery({
         queryKey: ['todos', page, size],
         queryFn: () => todoList(String(page), String(size)),
         staleTime: 10 * 1000
@@ -45,10 +45,10 @@ function ListComponent() {
                 {todo.complete ? '완료' : '미완료'}
               </span>
                                 </div>
-                                <div className="text-sm text-gray-600 mt-1">
-                                    <p>작성자: {todo.writer}</p>
-                                    <p>번호: {todo.tno}</p>
-                                </div>
+                                {/*<div className="text-sm text-gray-600 mt-1">*/}
+                                {/*    <p>작성자: {todo.writer}</p>*/}
+                                {/*    <p>번호: {todo.tno}</p>*/}
+                                {/*</div>*/}
                             </li>
                         ))}
                     </ul>
